@@ -14,6 +14,10 @@
 		70FE069320BFE1BC005714D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70FE069120BFE1BC005714D6 /* LaunchScreen.storyboard */; };
 		70FE069E20BFE1BC005714D6 /* Werkstuk1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE069D20BFE1BC005714D6 /* Werkstuk1Tests.swift */; };
 		70FE06A920BFE1BC005714D6 /* Werkstuk1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE06A820BFE1BC005714D6 /* Werkstuk1UITests.swift */; };
+		70FE06B920BFE528005714D6 /* Persoon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE06B820BFE528005714D6 /* Persoon.swift */; };
+		70FE06BB20BFE61A005714D6 /* Adres.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE06BA20BFE61A005714D6 /* Adres.swift */; };
+		70FE06BE20BFE9AA005714D6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70FE06BD20BFE9AA005714D6 /* MapKit.framework */; };
+		70FE06C220BFED0B005714D6 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE06C120BFED0B005714D6 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		70FE06A420BFE1BC005714D6 /* Werkstuk1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Werkstuk1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70FE06A820BFE1BC005714D6 /* Werkstuk1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Werkstuk1UITests.swift; sourceTree = "<group>"; };
 		70FE06AA20BFE1BC005714D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70FE06B820BFE528005714D6 /* Persoon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persoon.swift; sourceTree = "<group>"; };
+		70FE06BA20BFE61A005714D6 /* Adres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adres.swift; sourceTree = "<group>"; };
+		70FE06BD20BFE9AA005714D6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		70FE06C120BFED0B005714D6 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70FE06BE20BFE9AA005714D6 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +90,7 @@
 				70FE069C20BFE1BC005714D6 /* Werkstuk1Tests */,
 				70FE06A720BFE1BC005714D6 /* Werkstuk1UITests */,
 				70FE068620BFE1BC005714D6 /* Products */,
+				70FE06BC20BFE9AA005714D6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,8 +111,11 @@
 				70FE068A20BFE1BC005714D6 /* ViewController.swift */,
 				70FE068C20BFE1BC005714D6 /* Main.storyboard */,
 				70FE068F20BFE1BC005714D6 /* Assets.xcassets */,
+				70FE06C120BFED0B005714D6 /* TableViewController.swift */,
 				70FE069120BFE1BC005714D6 /* LaunchScreen.storyboard */,
+				70FE06B820BFE528005714D6 /* Persoon.swift */,
 				70FE069420BFE1BC005714D6 /* Info.plist */,
+				70FE06BA20BFE61A005714D6 /* Adres.swift */,
 			);
 			path = Werkstuk1;
 			sourceTree = "<group>";
@@ -123,6 +136,14 @@
 				70FE06AA20BFE1BC005714D6 /* Info.plist */,
 			);
 			path = Werkstuk1UITests;
+			sourceTree = "<group>";
+		};
+		70FE06BC20BFE9AA005714D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				70FE06BD20BFE9AA005714D6 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +215,11 @@
 					70FE068420BFE1BB005714D6 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					70FE069820BFE1BC005714D6 = {
 						CreatedOnToolsVersion = 9.2;
@@ -260,7 +286,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				70FE068B20BFE1BC005714D6 /* ViewController.swift in Sources */,
+				70FE06BB20BFE61A005714D6 /* Adres.swift in Sources */,
 				70FE068920BFE1BC005714D6 /* AppDelegate.swift in Sources */,
+				70FE06C220BFED0B005714D6 /* TableViewController.swift in Sources */,
+				70FE06B920BFE528005714D6 /* Persoon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
