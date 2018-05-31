@@ -9,15 +9,23 @@
 import UIKit
 import CoreLocation
 
-class Persoon: NSObject {
-    var naam: String = ""
-    var voornaam: String = ""
+class Persoon{
+    var naam: String
+    var voornaam: String
     var foto: UIImage
     var adres: Adres
     var coordinaten: CLLocationCoordinate2D
-    var telnummer: String = ""
+    var telnummer: String
     
-
+    init() {
+        naam = ""
+        voornaam = ""
+        foto = #imageLiteral(resourceName: "ca")
+        adres = Adres()
+        coordinaten = CLLocationCoordinate2D()
+        telnummer = ""
+        
+    }
     
     init(naam: String, voornaam: String, foto: UIImage, adres: Adres, coordinaten: CLLocationCoordinate2D, telnummer: String) {
         self.naam = naam

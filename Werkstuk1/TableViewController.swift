@@ -79,9 +79,7 @@ class TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "firstCell", for: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = self.personen[indexPath.row].voornaam
-        print(self.personen[indexPath.row].voornaam)
-        cell.detailTextLabel?.text = self.personen[indexPath.row].naam
+        cell.textLabel?.text = self.personen[indexPath.row].voornaam + " " + self.personen[indexPath.row].naam
         cell.imageView?.image = self.personen[indexPath.row].foto
         
         return cell
@@ -123,7 +121,7 @@ class TableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -131,11 +129,12 @@ class TableViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        if let nextVC = segue.destination as? ViewController {
-            let indexPath = self.tableView.indexPathForSelectedRow!
-            nextVC.temp = self.personen[indexPath.row]
+        if segue.identifier == "secondTab" {
+            let nextVC = segue.destination as! ViewController
+            let indexPath = self.tableView.indexPathForSelectedRow
+            nextVC.persoon = self.personen[(indexPath?.row)!]
         }
     }
-    */
+    
 
 }

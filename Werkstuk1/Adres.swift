@@ -8,11 +8,19 @@
 
 import UIKit
 
-class Adres: NSObject {
+class Adres {
     var straat: String
     var huisnummer: Int
     var postcode: String
     var gemeente: String
+    
+    init() {
+        straat = ""
+        huisnummer = 0
+        postcode = ""
+        gemeente = ""
+        
+    }
     
     init(straat: String, huisnummer: Int, postcode: String, gemeente: String) {
         self.straat = straat

@@ -10,11 +10,24 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class ViewController: UIViewController {
 
+    var persoon = Persoon()
+    
+    @IBOutlet weak var naam: UILabel!
+    @IBOutlet weak var adres: UILabel!
+    @IBOutlet weak var foto: UIImageView!
+    @IBOutlet weak var telnummer: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.naam.text = persoon.voornaam + " " + persoon.naam
+        self.adres.text = persoon.adres.straat + " " + persoon.adres.huisnummer + ", " + persoon.adres.postcode + " " + persoon.adres.gemeente
+        self.foto.image = persoon.foto
+        self.telnummer.text = persoon.telnummer
+        
     }
 
     override func didReceiveMemoryWarning() {
