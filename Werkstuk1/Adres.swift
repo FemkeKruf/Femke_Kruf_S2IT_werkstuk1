@@ -10,19 +10,19 @@ import UIKit
 
 class Adres {
     var straat: String
-    var huisnummer: Int
+    var huisnummer: String
     var postcode: String
     var gemeente: String
     
     init() {
         straat = ""
-        huisnummer = 0
+        huisnummer = ""
         postcode = ""
         gemeente = ""
         
     }
     
-    init(straat: String, huisnummer: Int, postcode: String, gemeente: String) {
+    init(straat: String, huisnummer: String, postcode: String, gemeente: String) {
         self.straat = straat
         self.huisnummer = huisnummer
         self.postcode = postcode
