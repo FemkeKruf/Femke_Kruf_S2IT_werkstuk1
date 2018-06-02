@@ -15,8 +15,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     var persoon = Persoon()
     
     @IBOutlet weak var naam: UILabel!
-    @IBOutlet weak var straat: UILabel!
-    @IBOutlet weak var huisnummer: UILabel!
+    @IBOutlet weak var adres: UILabel!
     @IBOutlet weak var postcode: UILabel!
     @IBOutlet weak var gemeente: UILabel!
     @IBOutlet weak var foto: UIImageView!
@@ -33,8 +32,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         locationManager.startUpdatingLocation()
         
         self.naam.text = persoon.voornaam + " " + persoon.naam
-        self.straat.text = persoon.adres.straat
-        self.huisnummer.text = persoon.adres.huisnummer
+        self.adres.text = persoon.adres.straat + " " + persoon.adres.huisnummer
         self.postcode.text = persoon.adres.postcode
         self.gemeente.text = persoon.adres.gemeente
         self.foto.image = persoon.foto
@@ -56,7 +54,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if let nextVC = segue.destination as? ViewControllerDetails
+        if let nextVC = segue.destination as? ViewControllerFoto
         {
             nextVC.foto = self.persoon.foto
             

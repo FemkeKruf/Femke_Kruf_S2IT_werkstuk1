@@ -76,7 +76,7 @@ class TableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "firstCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "personenCell", for: indexPath)
 
         // Configure the cell...
         cell.textLabel?.text = self.personen[indexPath.row].voornaam + " " + self.personen[indexPath.row].naam

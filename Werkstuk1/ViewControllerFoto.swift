@@ -1,5 +1,5 @@
 //
-//  ViewControllerDetails.swift
+//  ViewControllerFoto.swift
 //  Werkstuk1
 //
 //  Created by student on 31/05/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewControllerDetails: UIViewController {
+class ViewControllerFoto: UIViewController {
 
     var foto: UIImage?
     
