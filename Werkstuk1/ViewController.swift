@@ -22,6 +22,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     @IBOutlet weak var telnummer: UILabel!
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBAction func didTap(_ sender: UITapGestureRecognizer) {
+    }
     
     var locationManager = CLLocationManager()
     
@@ -38,6 +40,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         self.foto.image = persoon?.foto
         self.telnummer.text = persoon?.telnummer
         
+        self.mapView.addAnnotation(persoon!)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,9 +49,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         // Dispose of any resources that can be recreated.
     }
     
-    func mapView(_mapView: MKMapView, didUpdate userlocation: MKUserLocation) {
-        let center = CLLocationCoordinate2D(latitude: (persoon?.coordinate.latitude)!, longitude: (persoon?.coordinate.longitude)!)
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+    func mapView(_ mapView: MKMapView, didUpdate userlocation: MKUserLocation) {
+        let center = persoon?.coordinate
+        let region = MKCoordinateRegion(center: center!, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         mapView.setRegion(region, animated: true)
     }
     

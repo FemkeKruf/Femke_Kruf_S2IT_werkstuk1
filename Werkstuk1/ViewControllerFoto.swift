@@ -14,6 +14,8 @@ class ViewControllerFoto: UIViewController {
     
     @IBOutlet weak var fotoView: UIImageView!
     
+    @IBAction func didTap(_ sender: UITapGestureRecognizer) {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
