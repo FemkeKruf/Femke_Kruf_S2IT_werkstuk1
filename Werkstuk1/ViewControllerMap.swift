@@ -28,7 +28,7 @@ class ViewControllerMap: UIViewController, MKMapViewDelegate, CLLocationManagerD
         locationManager.startUpdatingLocation()
         
         for persoon in personen {
-            self.mapView.addAnnotation(persoon as! MKAnnotation)
+            self.mapView.addAnnotation(persoon)
         }
     }
 

@@ -175,7 +175,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="Z0f-ZI-0Oi"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="Navigation" id="Z0f-ZI-0Oi"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -199,7 +199,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="clE-yE-vLI">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ca" translatesAutoresizingMaskIntoConstraints="NO" id="clE-yE-vLI">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -216,4 +216,7 @@
             <point key="canvasLocation" x="2040.8" y="-581.55922038980509"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ca" width="500" height="500"/>
+    </resources>
 </document>

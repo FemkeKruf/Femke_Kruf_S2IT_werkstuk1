@@ -8,31 +8,24 @@
 
 import UIKit
 import CoreLocation
+import MapKit
 
-class Persoon{
+
+class Persoon: NSObject, MKAnnotation{
+    
     var naam: String
     var voornaam: String
     var foto: UIImage
     var adres: Adres
-    var coordinaten: CLLocationCoordinate2D
+    var coordinate: CLLocationCoordinate2D
     var telnummer: String
     
-    init() {
-        naam = ""
-        voornaam = ""
-        foto = #imageLiteral(resourceName: "ca")
-        adres = Adres()
-        coordinaten = CLLocationCoordinate2D()
-        telnummer = ""
-        
-    }
-    
-    init(naam: String, voornaam: String, foto: UIImage, adres: Adres, coordinaten: CLLocationCoordinate2D, telnummer: String) {
+    init(naam: String, voornaam: String, foto: UIImage, adres: Adres, coordinate: CLLocationCoordinate2D, telnummer: String) {
         self.naam = naam
         self.voornaam = voornaam
         self.foto = foto
         self.adres = adres
-        self.coordinaten = coordinaten
+        self.coordinate = coordinate
         self.telnummer = telnummer
     }
     

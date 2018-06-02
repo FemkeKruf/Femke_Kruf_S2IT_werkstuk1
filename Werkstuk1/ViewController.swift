@@ -12,7 +12,7 @@ import MapKit
 
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
-    var persoon = Persoon()
+    var persoon : Persoon?
     
     @IBOutlet weak var naam: UILabel!
     @IBOutlet weak var adres: UILabel!
@@ -31,12 +31,12 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
         
-        self.naam.text = persoon.voornaam + " " + persoon.naam
-        self.adres.text = persoon.adres.straat + " " + persoon.adres.huisnummer
-        self.postcode.text = persoon.adres.postcode
-        self.gemeente.text = persoon.adres.gemeente
-        self.foto.image = persoon.foto
-        self.telnummer.text = persoon.telnummer
+        self.naam.text = (persoon?.voornaam)! + " " + (persoon?.naam)!
+        self.adres.text = (persoon?.adres.straat)! + " " + (persoon?.adres.huisnummer)!
+        self.postcode.text = persoon?.adres.postcode
+        self.gemeente.text = persoon?.adres.gemeente
+        self.foto.image = persoon?.foto
+        self.telnummer.text = persoon?.telnummer
         
     }
 
@@ -46,7 +46,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
     
     func mapView(_mapView: MKMapView, didUpdate userlocation: MKUserLocation) {
-        let center = persoon.coordinaten
+        let center = CLLocationCoordinate2D(latitude: (persoon?.coordinate.latitude)!, longitude: (persoon?.coordinate.longitude)!)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         mapView.setRegion(region, animated: true)
     }
@@ -56,7 +56,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         // Pass the selected object to the new view controller.
         if let nextVC = segue.destination as? ViewControllerFoto
         {
-            nextVC.foto = self.persoon.foto
+            nextVC.foto = self.persoon?.foto
             
         }
     }
